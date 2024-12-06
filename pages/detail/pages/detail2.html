@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" ng-app="websiteAdv">
+<html lang="en" ng-app="websiteAdv">
 
 <head>
     <meta charset="UTF-8">
@@ -19,19 +19,19 @@
             <div class="detail">
                 <p class="merk">{{produk.merk}}</p>
                 <h3 class="judul-produk">{{produk.nama}}</h3>
-                <div class="btn-group" role="group" aria-label="Varian Produk">
-                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe A'}" ng-click="pilihVarian('Tipe A')">Tipe A</button>
-                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe B'}" ng-click="pilihVarian('Tipe B')">Tipe B</button>
-                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe C'}" ng-click="pilihVarian('Tipe C')">Tipe C</button>
+                <div class="btn-group" role="group" aria-label="Product Variant">
+                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe A'}" ng-click="pilihVarian('Tipe A')">Type A</button>
+                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe B'}" ng-click="pilihVarian('Tipe B')">Type B</button>
+                    <button type="button" class="btn btn-outline-primary" ng-class="{'active': varianTerpilih === 'Tipe C'}" ng-click="pilihVarian('Tipe C')">Type C</button>
                 </div>
-                <p><strong>Varian Terpilih:</strong> {{varianTerpilih || 'Belum dipilih'}}</p>
+                <p><strong>Selected Variant:</strong> {{varianTerpilih || 'Not selected yet'}}</p>
                 <div class="d-flex justify-content-start align-items-center">
-                    <a href="{{produk.link}}" class="btn btn-primary" target="_blank">Lihat Produk</a>
+                    <a href="{{produk.link}}" class="btn btn-primary" target="_blank">View Product</a>
                     <button class="btn-favorit" ng-click="toggleFavorit()">
                         <i class="bi" ng-class="{'bi-heart-fill': favorit, 'bi-heart': !favorit}"></i>
                     </button>
                 </div>
-                <h4 class="mt-3">Deskripsi:</h4>
+                <h4 class="mt-3">Description:</h4>
                 <p>{{produk.deskripsi}}</p>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <span ng-repeat="bintang in [] | range:5" ng-class="{'bi bi-star-fill': bintang <= produk.rating, 'bi bi-star': bintang > produk.rating}" class="bi"></span>
                 <span>{{produk.rating}}/5</span>
             </div>
-            <h5>Ulasan:</h5>
+            <h5>Reviews:</h5>
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="ulasan in ulasanProduk">
                     <strong>{{ulasan.nama}}:</strong> {{ulasan.komentar}}
